@@ -1,1 +1,1 @@
-Laravel - Project Episode 1
+Laravel - Project Episode 2
