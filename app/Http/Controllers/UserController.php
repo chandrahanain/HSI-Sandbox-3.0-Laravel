@@ -19,6 +19,19 @@ class UserController extends Controller
         // return view('home', $data);
     }
 
+    public function profile()
+    {
+        $user = User::all();
+        $data = array(
+            'title' =>  ' Data Profile',
+            // 'data_profile' =>  User::where('id', $user)->get()
+            'data_profile' =>  $user
+        );
+
+        return view('profile', $data);
+        // return view('home', $data);
+    }
+
     public function store(Request $request)
     {
         User::create([
@@ -41,6 +54,18 @@ class UserController extends Controller
         ]);
 
         return redirect('/user')->with('success', 'Data Berhasil Di Ubah');
+    }
+
+    public function updateprofile(Request $request, $id)
+    {
+        User::where('id',$id)->update([
+            'name'      =>  $request->name,
+            'email'     =>  $request->email,
+            'password'  =>  Hash::make($request->password),
+            'role'      =>  $request->role,  
+        ]);
+
+        return redirect('/profile')->with('success', 'Data Berhasil Di Ubah');
     }
 
     public function destroy($id)

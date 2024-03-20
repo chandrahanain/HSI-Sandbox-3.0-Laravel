@@ -135,8 +135,6 @@
                                     @endforeach
                                 </select>
                             </div>
-
-
                             <div class="input-group mb-3">
                                 <input type="number" name="stok" value="{{ $d->stok }}" class="form-control" placeholder="Stok ..." required>
                                 <div class="input-group-append"><span class="input-group-text">Pcs</span>
