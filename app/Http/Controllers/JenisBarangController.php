@@ -15,7 +15,6 @@ class JenisBarangController extends Controller
         );
 
         return view('admin.master.jenisbarang.list', $data);
-        // return view('home', $data);
     }
 
     public function store(Request $request)

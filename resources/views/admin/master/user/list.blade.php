@@ -166,6 +166,7 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> Close</button>
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-trash"></i> Hapus</button>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
