@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -11,11 +10,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
     <link href="/assets/css/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body class="h-100">
-    
+
     <!--*******************
         Preloader start
     ********************-->
@@ -30,7 +29,7 @@
         Preloader end
     ********************-->
 
-    
+
 
 
 
@@ -41,8 +40,10 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="#" method='POST' action=''> <h4>Silahkan Login</h4></a>
-        
+                                <a class="text-center" href="#" method='POST' action=''>
+                                    <h4>Silahkan Login</h4>
+                                </a>
+
                                 <form class="mt-5 mb-5 login-input">
                                     @csrf
                                     <div class="form-group">
@@ -60,9 +61,9 @@
             </div>
         </div>
     </div>
-    
 
-    
+
+
 
     <!--**********************************
         Scripts
@@ -72,10 +73,38 @@
     <script src="/assets/js/settings.js"></script>
     <script src="/assets/js/gleek.js"></script>
     <script src="/assets/js/styleSwitcher.js"></script>
+    @if (session('error'))
+        <script>
+            var SweetAlert2Demo = function() {
+                var initDemos = function() {
+                    swal({
+                        title: "{{ session('error') }}",
+                        text: "{{ session('error') }}",
+                        icon: "error",
+                        buttons: {
+                            confirm: {
+                                text: "Confirm Me",
+                                value: true,
+                                visible: true,
+                                className: "btn btn-success",
+                                closeModal: true
+                            }
+                        }
+                    });
+                };
+
+                return {
+                    init: function() {
+                        initDemos();
+                    },
+                };
+            }();
+
+            jQuery(document).ready(function() {
+                SweetAlert2Demo.init();
+            });
+        </script>
+    @endif
 </body>
+
 </html>
-
-
-
-
-
